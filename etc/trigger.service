@@ -1,0 +1,16 @@
+[Unit]
+Description=A directory watcher and notifier.
+After=network.target
+StartLimitIntervalSec=15
+StartLimitBurst=1
+
+[Service]
+EnvironmentFile=/etc/default/trigger
+ExecStart=/usr/sbin/trigger
+TimeoutStopSec=5
+User=root
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
