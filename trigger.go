@@ -89,7 +89,7 @@ func (tr *Trigger) UnmarshalJSONObject(dec *gojay.Decoder, key string) error {
 		return dec.String(&tr.Name)
 	case "subject":
 		return dec.String(&tr.Subject)
-	case "paths":
+	case "path":
 		return dec.String(&tr.Path)
 	case "modes":
 		return dec.SliceString(&tr.Modes)
